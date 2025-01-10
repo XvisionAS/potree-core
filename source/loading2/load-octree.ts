@@ -9,6 +9,7 @@ export async function loadOctree(
 {
 	const trueUrl = await getUrl(url);
 	const loader = new OctreeLoader();
+  loader.getUrl = getUrl;
 	const {geometry} = await loader.load(trueUrl, xhrRequest);
 	return geometry;
 }
